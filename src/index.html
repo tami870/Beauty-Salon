@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="robots" content="noindex" />
   <!-- meta情報 -->
-  <title>CodeUps</title>
-  <meta name="description" content="" />
+  <title>Gliss</title>
+  <meta name="description" content="世界中のセレブ御用達のヘアセットとフルメイクが専門のビューティサロンです。今まで出会ったことのない“特別なあなた“を体験してみませんか。" />
   <meta name="keywords" content="" />
   <!-- ogp -->
   <meta property="og:title" content="" />
@@ -18,22 +19,89 @@
   <meta property="og:description" content="" />
   <!-- ファビコン -->
   <link rel="”icon”" href="" />
+  <!-- Googleフォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Zen+Old+Mincho&display=swap"
+    rel="stylesheet">
   <!-- css -->
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- JavaScript -->
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script defer src="./assets/js/script.js"></script>
 </head>
-<body>
-  <header>
 
-  </header>
-  <main>
+<body>
+  <header class="header">
     <div class="inner">
-      <p class="test">変更のテスト</p>
+      <h1 class="logo">Gliss</h1>
+      <nav class="nav">
+        <ul class="list">
+          <li><a href="#menu">MENU</a></li>
+          <li><a href="#about">ABOUT</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+  <main class="main">
+    <div class="first-view">
+      <div class="overlay">
+        <p class="text"><span class="big">美</span>の<span class="big">頂点</span>を目指す <br class="pc">贅沢なヘアメイク体験</p>
+      </div>
+    </div>
+    <section class="menu wrapper">
+      <h2 class="section-title">MENU</h2>
+      <ul class="menu-list">
+        <li>
+          <div class="img">
+            <img src="./assets/images/common/menu1.jpg" alt="">
+          </div>
+          <div class="text">
+            <p class="title">ショート・ミディアム</p>
+            <p class="detail">鎖骨までの長さの方 <br>¥11,000-</p>
+          </div>
+        </li>
+        <li>
+          <div class="img">
+            <img src="./assets/images/common/menu2.jpg" alt="">
+          </div>
+          <div class="text">
+            <p class="title">ロング</p>
+            <p class="detail">鎖骨以上の長さの方 <br>¥16,500-</p>
+          </div>
+        </li>
+        <li>
+          <div class="img">
+            <img src="./assets/images/common/menu3.jpg" alt="">
+          </div>
+          <div class="text">
+            <p class="title">メイク</p>
+            <p class="detail">ヘアに合わせたフルメイクアップ <br>¥11,000-</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="about wrapper">
+      <h2 class="section-title">ABOUT</h2>
+      <div class="flex">
+        <div class="img">
+          <img src="./assets/images/common/About.jpg" alt="">
+        </div>
+        <div class="text">
+          <p class="title">
+            セレブ御用達のヘアメイク専門<br>ビューティサロンが銀座・新宿に初出店
+          </p>
+          <p class="description">
+            世界中のセレブ御用達のヘアセットとフルメイクが専門のビューティサロンです。今まで出会ったことのない“特別なあなた“を体験してみませんか。
+          </p>
+          <a href="#" class="btn">ご予約はこちら</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer>
+  <footer class="footer wrapper">
+    <p class="copyright">©︎Copyright0000 Gliss</p>
 
   </footer>
 </body>
