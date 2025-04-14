@@ -1,6 +1,6 @@
-@use "./base/**";
-@use "./page/**/*";
-@use "./module/**/*";
+// @use "./base/**";
+// @use "./page/**/*";
+// @use "./module/**/*";
 
 @charset "UTF-8";
 
@@ -9,6 +9,7 @@
 ---------------------------- */
 // * {
 //   border: 1px solid greenyellow;
+//   box-sizing: border-box;
 // }
 html {
   font-size: 100%;
@@ -19,9 +20,9 @@ body {
   font-weight: 400;
 }
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  vertical-align: bottom;
+  display: block;
 }
 li {
   list-style: none;
@@ -41,6 +42,11 @@ a:hover {
   padding: 0 30px;
   margin: 0 auto;
 }
+@media screen and (min-width: 768px) {
+  .wrapper {
+    padding: 0 60px;
+  }
+}
 
 /* ----------------------------
 見出し
@@ -55,7 +61,6 @@ a:hover {
   font-weight: 400;
   color: #a7845a;
   position: relative;
-  padding-bottom: 43px;
 }
 .section-title::before,
 .section-title::after {
@@ -71,10 +76,10 @@ header
 .header {
   background-color: #000;
   margin: 0;
-  padding: 8px 0;
+  padding: 9px 0 8px;
+  height: 50px;
 }
 .header .inner {
-  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -82,16 +87,45 @@ header
   align-items: center;
 }
 .header .logo {
-  color: #a7845a;
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 1.1;
+  width: 100%;
+  max-width: 56px;
+  line-height: 0;
+  // ロゴが文字の場合
+  // color: #a7845a;
+  // font-size: 30px;
+  // font-weight: 400;
+  // line-height: 1.1;
+}
+.header .logo a {
+  display: block;
 }
 .header .nav .list {
   display: none;
 }
-
 @media screen and (min-width: 768px) {
+  .header {
+    max-width: 1200px;
+    padding: 12px 0 5px;
+  }
+  .header .inner {
+    padding: 0 60px;
+  }
+  .header .nav .list {
+    display: flex;
+    color: #fff;
+  }
+  .header .nav .list li {
+    font-size: 20px;
+    line-height: 1.65;
+    font-family: "EB Garamond";
+    margin-right: 37px;
+  }
+  .header .nav .list li:last-child {
+    margin-right: 7px;
+  }
+  .header .nav .list li a {
+    display: block;
+  }
 }
 
 /* ----------------------------
@@ -100,8 +134,9 @@ first-view
 .first-view {
   position: relative;
   background-image: url("../../assets/images/common/FV_sp.jpg");
-  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   height: 550px;
   display: flex;
   align-items: center;
@@ -110,6 +145,8 @@ first-view
 .first-view .overlay {
   width: 100%;
   background-color: rgba(167, 132, 90, 0.8);
+  // background-color: #a7845a;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 16px;
 }
 .first-view .text {
@@ -121,14 +158,32 @@ first-view
   text-shadow: 0 0 5px #5b452a;
   text-align: center;
 }
-.first-view .text .big {
+.first-view .text .large {
   font-size: 40px;
 }
 @media screen and (min-width: 768px) {
+  .first-view {
+    background-image: url("../../assets/images/common/first-view_pc.jpg");
+    height: 500px;
+  }
+  .first-view .text {
+    font-size: 35px;
+  }
+  .first-view .text .large {
+    font-size: 50px;
+  }
+  .first-view .text .space {
+    display: inline-block;
+    width: 0.5em;
+  }
   .first-view .text .pc {
     display: none;
   }
+  .first-view .text .medium {
+    font-size: 40px;
+  }
 }
+
 /* ----------------------------
 main - menu
 ---------------------------- */
@@ -136,15 +191,23 @@ main - menu
   padding-top: 50px;
   padding-bottom: 50px;
 }
+.menu .section-title {
+  margin-bottom: 43px;
+}
 .menu .menu-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   margin-bottom: 20px;
 }
 .menu .img {
   margin-bottom: 20px;
 }
 .menu .img img {
-  max-width: 600px;
-  height: 250px;
+  max-width: 315px;
+  height: auto;
+  margin: 0 auto;
 }
 .menu .text {
   text-align: center;
@@ -154,12 +217,34 @@ main - menu
   font-size: 20px;
   line-height: 1.25;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 }
 .menu .detail {
   font-size: 15px;
   line-height: 1.67;
   margin-bottom: 5px;
+}
+@media screen and (min-width: 768px) {
+  .menu {
+    padding-top: 54px;
+    padding-bottom: 36px;
+  }
+  .menu .section-title {
+    margin-bottom: 44px;
+  }
+  .menu .menu-list {
+    display: flex;
+    flex-direction: row;
+  }
+  .menu .menu-list li {
+    margin-right: 30px;
+  }
+  .menu .img img {
+    max-width: 100%;
+  }
+  .menu .detail {
+    margin-bottom: 0;
+  }
 }
 
 /* ----------------------------
@@ -170,12 +255,11 @@ main - about
   padding-top: 50px;
   padding-bottom: 60px;
 }
+.about .section-title {
+  margin-bottom: 39px;
+}
 .about .img {
   margin-bottom: 28px;
-}
-.about .img img {
-  height: 250px;
-  object-fit: cover;
 }
 .about .text {
   font-family: "Zen Old Mincho";
@@ -187,13 +271,11 @@ main - about
   line-height: 1.6;
   margin-bottom: 10px;
 }
-
 .about .description {
   font-size: 18px;
   line-height: 1.83;
   margin-bottom: 33px;
 }
-
 .about .btn {
   background-color: #a7845a;
   font-family: "Zen Old Mincho";
@@ -201,7 +283,53 @@ main - about
   display: block;
   text-align: center;
   font-size: 20px;
-  padding: 15px 0;
+  font-weight: 600;
+  padding: 15px 0 11px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media screen and (min-width: 768px) {
+  .about {
+    padding-top: 44px;
+    padding-bottom: 48px;
+  }
+  .about .section-title {
+    margin-bottom: 47px;
+  }
+  .about .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+  .about .img {
+    width: 49%;
+    max-width: 450px;
+    margin-bottom: 0;
+  }
+  .about .img img {
+    height: 300px;
+  }
+  .about .text {
+    width: 49%;
+  }
+  .about .img img {
+    display: block;
+  }
+  .about .text {
+    margin-right: 2%;
+  }
+  .about .title {
+    margin-bottom: 17px;
+  }
+  .about .description {
+    margin-bottom: 22px;
+  }
+  .about .btn {
+    max-width: 250px;
+    text-align: center;
+    font-size: 20px;
+    padding: 13px 0;
+  }
 }
 
 /* ----------------------------
@@ -213,7 +341,6 @@ footer
 }
 .footer .copyright {
   color: #fff;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   font-family: "EB Garamond";
   text-align: center;
   font-size: 20px;
