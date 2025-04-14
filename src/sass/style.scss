@@ -53,15 +53,16 @@ a:hover {
 ---------------------------- */
 .section-title {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 16px;
+  position: relative;
   font-family: "EB Garamond";
   font-size: 30px;
   font-weight: 400;
   color: #a7845a;
-  position: relative;
 }
+
 .section-title::before,
 .section-title::after {
   content: "";
@@ -74,17 +75,17 @@ a:hover {
 header
 ---------------------------- */
 .header {
-  background-color: #000;
+  height: 50px;
   margin: 0;
   padding: 9px 0 8px;
-  height: 50px;
+  background-color: #000;
 }
 .header .inner {
-  margin: 0 auto;
-  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 .header .logo {
   width: 100%;
@@ -104,7 +105,6 @@ header
 }
 @media screen and (min-width: 768px) {
   .header {
-    max-width: 1200px;
     padding: 12px 0 5px;
   }
   .header .inner {
@@ -133,21 +133,21 @@ first-view
 ---------------------------- */
 .first-view {
   position: relative;
-  background-image: url("../../assets/images/common/FV_sp.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 550px;
+  background-image: url("../../assets/images/common/first-view_sp.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .first-view .overlay {
   width: 100%;
+  padding: 16px;
   background-color: rgba(167, 132, 90, 0.8);
   // background-color: #a7845a;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 16px;
 }
 .first-view .text {
   color: #fff;
@@ -155,16 +155,16 @@ first-view
   font-family: "Zen Old Mincho";
   font-style: italic;
   font-weight: 600;
-  text-shadow: 0 0 5px #5b452a;
   text-align: center;
+  text-shadow: 0 0 5px #5b452a;
 }
 .first-view .text .large {
   font-size: 40px;
 }
 @media screen and (min-width: 768px) {
   .first-view {
-    background-image: url("../../assets/images/common/first-view_pc.jpg");
     height: 500px;
+    background-image: url("../../assets/images/common/first-view_pc.jpg");
   }
   .first-view .text {
     font-size: 35px;
@@ -205,12 +205,11 @@ main - menu
   margin-bottom: 20px;
 }
 .menu .img img {
-  max-width: 315px;
+  width: 100%;
   height: auto;
   margin: 0 auto;
 }
 .menu .text {
-  text-align: center;
   font-family: "Zen Old Mincho";
 }
 .menu .title {
@@ -251,9 +250,9 @@ main - menu
 main - about
 ---------------------------- */
 .about {
-  background-color: rgba(167, 132, 90, 0.2);
   padding-top: 50px;
   padding-bottom: 60px;
+  background-color: rgba(167, 132, 90, 0.2);
 }
 .about .section-title {
   margin-bottom: 39px;
@@ -277,14 +276,14 @@ main - about
   margin-bottom: 33px;
 }
 .about .btn {
-  background-color: #a7845a;
-  font-family: "Zen Old Mincho";
-  color: #fff;
   display: block;
   text-align: center;
+  padding: 15px 0 11px;
+  font-family: "Zen Old Mincho";
   font-size: 20px;
   font-weight: 600;
-  padding: 15px 0 11px;
+  color: #fff;
+  background-color: #a7845a;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 @media screen and (min-width: 768px) {
@@ -297,9 +296,9 @@ main - about
   }
   .about .flex {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
   }
   .about .img {
     width: 49%;
@@ -307,15 +306,11 @@ main - about
     margin-bottom: 0;
   }
   .about .img img {
+    display: block;
     height: 300px;
   }
   .about .text {
     width: 49%;
-  }
-  .about .img img {
-    display: block;
-  }
-  .about .text {
     margin-right: 2%;
   }
   .about .title {
@@ -326,9 +321,9 @@ main - about
   }
   .about .btn {
     max-width: 250px;
+    padding: 13px 0;
     text-align: center;
     font-size: 20px;
-    padding: 13px 0;
   }
 }
 
@@ -336,8 +331,8 @@ main - about
 footer
 ---------------------------- */
 .footer {
-  background-color: #000;
   padding: 30px;
+  background-color: #000;
 }
 .footer .copyright {
   color: #fff;
