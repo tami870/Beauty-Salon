@@ -2,26 +2,19 @@
 // @use "./page/**/*";
 // @use "./module/**/*";
 
-@charset "UTF-8";
-
 /* ----------------------------
 初期設定
 ---------------------------- */
-// * {
-//   border: 1px solid greenyellow;
-//   box-sizing: border-box;
-// }
 html {
   font-size: 100%;
 }
 body {
   color: #000;
-  font-family: "EB Garamond", "Zen Old Mincho", sans-serif;
+  font-family: "Zen Old Mincho", sans-serif, serif;
   font-weight: 400;
 }
 img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
   display: block;
 }
 li {
@@ -55,9 +48,8 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
   position: relative;
-  font-family: "EB Garamond";
+  font-family: "EB Garamond", serif;
   font-size: 30px;
   font-weight: 400;
   color: #a7845a;
@@ -66,7 +58,7 @@ a:hover {
 .section-title::before,
 .section-title::after {
   content: "";
-  width: 23px;
+  width: 15px;
   height: 1px;
   background-color: #a7845a;
 }
@@ -75,9 +67,9 @@ a:hover {
 header
 ---------------------------- */
 .header {
+  padding: 13px 0;
   height: 50px;
   margin: 0;
-  padding: 9px 0 8px;
   background-color: #000;
 }
 .header .inner {
@@ -91,11 +83,13 @@ header
   width: 100%;
   max-width: 56px;
   line-height: 0;
-  // ロゴが文字の場合
-  // color: #a7845a;
-  // font-size: 30px;
-  // font-weight: 400;
-  // line-height: 1.1;
+  /* ロゴが文字の場合の調整 */
+  /*
+  color: #a7845a;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.1;
+  */
 }
 .header .logo a {
   display: block;
@@ -117,7 +111,8 @@ header
   .header .nav .list li {
     font-size: 20px;
     line-height: 1.65;
-    font-family: "EB Garamond";
+    font-weight: 300;
+    font-family: "EB Garamond", serif;
     margin-right: 37px;
   }
   .header .nav .list li:last-child {
@@ -137,50 +132,62 @@ first-view
   align-items: center;
   justify-content: center;
   height: 550px;
-  background-image: url("../../assets/images/common/first-view_sp.jpg");
+  background-image: url("../../assets/images/common/first-view_sp.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .first-view .overlay {
   width: 100%;
-  padding: 16px;
+  padding: 16px 0;
   background-color: rgba(167, 132, 90, 0.8);
-  // background-color: #a7845a;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .first-view .text {
-  color: #fff;
+  margin: 0 auto;
   font-size: 30px;
-  font-family: "Zen Old Mincho";
   font-style: italic;
-  font-weight: 600;
+  font-weight: 500;
+  color: #fff;
   text-align: center;
   text-shadow: 0 0 5px #5b452a;
+  line-height: 1.4;
+  transform: translate(-2px, 0);
+}
+.first-view .text .large,
+.first-view .text .medium {
+  display: inline-block;
 }
 .first-view .text .large {
   font-size: 40px;
 }
+.first-view .text .medium {
+  transform: translate(-7px, -3px);
+}
 @media screen and (min-width: 768px) {
   .first-view {
     height: 500px;
-    background-image: url("../../assets/images/common/first-view_pc.jpg");
+    background-image: url("../../assets/images/common/first-view_pc.webp");
+  }
+  .first-view .overlay {
+    padding: 20px 0;
   }
   .first-view .text {
     font-size: 35px;
+    transform: translate(-9px, -2px);
   }
   .first-view .text .large {
     font-size: 50px;
   }
+  .first-view .text .medium {
+    font-size: 40px;
+    transform: translate(15px, 1px);
+  }
   .first-view .text .space {
     display: inline-block;
-    width: 0.5em;
   }
   .first-view .text .pc {
     display: none;
-  }
-  .first-view .text .medium {
-    font-size: 40px;
   }
 }
 
@@ -188,11 +195,12 @@ first-view
 main - menu
 ---------------------------- */
 .menu {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 48px;
+  padding-bottom: 51px;
 }
-.menu .section-title {
-  margin-bottom: 43px;
+.menu .title-space-menu {
+  margin-bottom: 39px;
+  gap: 15px;
 }
 .menu .menu-list li {
   display: flex;
@@ -201,45 +209,63 @@ main - menu
   text-align: center;
   margin-bottom: 20px;
 }
+.menu .menu-list li:last-child {
+  margin-bottom: 0;
+}
 .menu .img {
+  width: 100%;
+  max-width: 315px;
+  height: auto;
   margin-bottom: 20px;
 }
+.menu .img picture,
 .menu .img img {
+  display: block;
   width: 100%;
   height: auto;
-  margin: 0 auto;
-}
-.menu .text {
-  font-family: "Zen Old Mincho";
+  object-fit: cover;
+  aspect-ratio: 315 / 250;
 }
 .menu .title {
   font-size: 20px;
+  font-weight: 500;
   line-height: 1.25;
-  font-weight: 600;
   margin-bottom: 9px;
 }
 .menu .detail {
   font-size: 15px;
   line-height: 1.67;
-  margin-bottom: 5px;
 }
 @media screen and (min-width: 768px) {
   .menu {
-    padding-top: 54px;
+    padding-top: 53px;
     padding-bottom: 36px;
   }
-  .menu .section-title {
-    margin-bottom: 44px;
+  .menu .title-space-menu {
+    margin-bottom: 38px;
   }
   .menu .menu-list {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
   .menu .menu-list li {
     margin-right: 30px;
+    margin-bottom: 0;
   }
+  .menu .menu-list li:last-child {
+    margin-right: 0;
+  }
+  .menu .img {
+    max-width: 300px;
+    margin-bottom: 30px;
+  }
+  .menu .img picture,
   .menu .img img {
-    max-width: 100%;
+    aspect-ratio: 300/ 250;
+  }
+  .menu .title {
+    margin-bottom: 10px;
   }
   .menu .detail {
     margin-bottom: 0;
@@ -250,49 +276,58 @@ main - menu
 main - about
 ---------------------------- */
 .about {
-  padding-top: 50px;
+  padding-top: 47px;
   padding-bottom: 60px;
   background-color: rgba(167, 132, 90, 0.2);
 }
-.about .section-title {
-  margin-bottom: 39px;
+.about .title-space-about {
+  margin-bottom: 35px;
+  gap: 7px;
 }
 .about .img {
+  width: 100%;
+  max-width: 315px;
   margin-bottom: 28px;
 }
+.about .img picture,
+.about .img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 315 / 250;
+}
 .about .text {
-  font-family: "Zen Old Mincho";
   color: #505050;
 }
 .about .title {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.6;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 }
 .about .description {
   font-size: 18px;
   line-height: 1.83;
-  margin-bottom: 33px;
+  margin-bottom: 27px;
 }
 .about .btn {
   display: block;
   text-align: center;
-  padding: 15px 0 11px;
-  font-family: "Zen Old Mincho";
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
+  padding: 11px 0 14px;
   color: #fff;
   background-color: #a7845a;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 @media screen and (min-width: 768px) {
   .about {
-    padding-top: 44px;
+    padding-top: 42px;
     padding-bottom: 48px;
   }
-  .about .section-title {
-    margin-bottom: 47px;
+  .about .title-space-about {
+    margin-bottom: 43px;
   }
   .about .flex {
     display: flex;
@@ -305,9 +340,9 @@ main - about
     max-width: 450px;
     margin-bottom: 0;
   }
+  .about .img picture,
   .about .img img {
-    display: block;
-    height: 300px;
+    aspect-ratio: 450/ 300;
   }
   .about .text {
     width: 49%;
@@ -321,9 +356,9 @@ main - about
   }
   .about .btn {
     max-width: 250px;
+    font-size: 20px;
     padding: 13px 0;
     text-align: center;
-    font-size: 20px;
   }
 }
 
@@ -336,8 +371,8 @@ footer
 }
 .footer .copyright {
   color: #fff;
-  font-family: "EB Garamond";
   text-align: center;
   font-size: 20px;
   line-height: 1.65;
+  font-family: "EB Garamond", serif;
 }
