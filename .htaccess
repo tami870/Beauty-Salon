@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "test"
-AuthUserFile "https://github.com/tami870/Beauty_salon/blob/main/.htaccess"
-require valid-user
