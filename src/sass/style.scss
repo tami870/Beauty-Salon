@@ -3,6 +3,13 @@
 // @use "./module/**/*";
 
 /* ----------------------------
+余白確認用
+---------------------------- */
+// * {
+//   border: 1px solid #e0e0e0;
+// }
+
+/* ----------------------------
 初期設定
 ---------------------------- */
 html {
@@ -77,6 +84,7 @@ header
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+  max-width: 1200px;
   padding: 0 20px;
 }
 .header .logo {
@@ -214,7 +222,7 @@ main - menu
 }
 .menu .img {
   width: 100%;
-  max-width: 315px;
+  max-width: 550px;
   height: auto;
   margin-bottom: 20px;
 }
@@ -257,7 +265,7 @@ main - menu
     margin-right: 0;
   }
   .menu .img {
-    max-width: 300px;
+    // max-width: 300px;
     margin-bottom: 30px;
   }
   .menu .img picture,
@@ -284,9 +292,15 @@ main - about
   margin-bottom: 35px;
   gap: 7px;
 }
+.about .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 .about .img {
+  max-width: 550px;
   width: 100%;
-  max-width: 315px;
   margin-bottom: 28px;
 }
 .about .img picture,
@@ -298,6 +312,7 @@ main - about
   aspect-ratio: 315 / 250;
 }
 .about .text {
+  max-width: 550px;
   color: #505050;
 }
 .about .title {
@@ -316,6 +331,7 @@ main - about
   text-align: center;
   font-size: 20px;
   font-weight: 500;
+  max-width: 315px;
   padding: 11px 0 14px;
   color: #fff;
   background-color: #a7845a;
@@ -329,11 +345,9 @@ main - about
   .about .title-space-about {
     margin-bottom: 43px;
   }
-  .about .flex {
-    display: flex;
+  .about .inner {
+    // display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
   }
   .about .img {
     width: 49%;
@@ -355,7 +369,6 @@ main - about
     margin-bottom: 22px;
   }
   .about .btn {
-    max-width: 250px;
     font-size: 20px;
     padding: 13px 0;
     text-align: center;
